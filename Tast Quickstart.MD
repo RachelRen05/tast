@@ -2,7 +2,7 @@
 Tast is an integration-testing system for Chrome OS. Its focus is on maintainability, speed, and ease of interpreting and reproducing test results. It supports building, deploying, and running tests. It doesn't implement other functionality like managing labs of devices used for testing, scheduling tests, or storing test results.
 # Tast Quickstart
   ## Prerequisites
-   ### 1.Install [Chrome OS chroot](http://www.chromium.org/chromium-os/quick-start-guide)
+   ### 1.Install [Chrome OS chroot](https://www.chromium.org/chromium-os/quick-start-guide)
    **Note:Do not run any of the commands listed in this document as root – the commands themselves will run sudo to get root access when needed**
    #### Prerequisites
    * Ubuntu Linux (version == 16.04 - Xenial)
@@ -23,10 +23,14 @@ Tast is an integration-testing system for Chrome OS. Its focus is on maintainabi
    **2. Install [depot tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)**  
    * GET DEPOT TOOLS
     * Clone the depot_tools repository  
+
+      `mkdir ~/chromiumos`
+      `cd ~/chromiumos`
       `git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git`
       
    * Add depot_tools to the front of your PATH or add this to ~/.bashrc
-     `export PATH=/home/ubuntu/dep/depot_tools:$PATH`  
+  
+     `export PATH=/home/$hostname/chromiumos/depot_tools:$PATH`  
      
    **3.  [tweak your sudoers configuration](http://www.chromium.org/chromium-os/tips-and-tricks-for-chromium-os-developers#TOC-Making-sudo-a-little-more-permissive). This is required for using cros_sdk**  
    
@@ -43,7 +47,7 @@ Tast is an integration-testing system for Chrome OS. Its focus is on maintainabi
      
    >depending on your Linux distribution's configuration, sudoers.d may not be the correct directory, you may check /etc/sudoers for an #includedir directive to see what the actual directory is.
    #### Get the Source
-    cd ${SOURCE_REPO}
+    cd ~/chromiumos
     repo init -u https://chromium.googlesource.com/chromiumos/manifest.git
     repo sync -j4
     >error log:SyntaxError: invalid syntax
