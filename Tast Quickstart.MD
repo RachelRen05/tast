@@ -47,6 +47,8 @@ Tast is an integration-testing system for Chrome OS. Its focus is on maintainabi
      
    >depending on your Linux distribution's configuration, sudoers.d may not be the correct directory, you may check /etc/sudoers for an #includedir directive to see what the actual directory is.
    #### Get the Source
+   **Note:when useing git for the first time,you need to set your account's default identity.**
+   
     cd ~/chromiumos
     repo init -u https://chromium.googlesource.com/chromiumos/manifest.git
     repo sync -j4
